@@ -1,3 +1,6 @@
-.red {
-    background-color: red;
+/*............................................Buttons*/
+#addNumber {
+    color: green;
+    background-color: white;
+    border: none;
 }
