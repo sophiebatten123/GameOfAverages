@@ -28,8 +28,24 @@ function mode(a, b, c, d, e) {
     return modes;
 }
 
-function median(a, b, c) {
-    return;
+function median(a, b, c, d) {
+    let array = [];
+    array.push(a, b, c, d);
+    let sorted = array.sort(function(a ,b) {
+        return a-b
+    }) // Returns the sorted array
+    console.log(sorted);
+    if (array.length % 2 == 0) {
+        var middle = (array.length + 1) / 2;
+        var upper = Math.floor(middle)
+        var lower = upper - 1;
+        var median = (sorted[lower] + sorted[upper])/2;
+    } else {
+        var middle = array.length / 2;
+        var lower = Math.floor(middle);
+        var median = sorted[lower]
+    }
+    return median;
 }
 
 document.getElementById("meanButton").onclick = function() {
@@ -54,5 +70,6 @@ document.getElementById("medianButton").onclick = function() {
     var a = parseFloat(document.getElementById("userInput1").value);
     var b = parseFloat(document.getElementById("userInput2").value);
     var c = parseFloat(document.getElementById("userInput3").value);
-    alert(median(a, b, c));
+    var d = parseFloat(document.getElementById("userInput4").value);
+    alert(median(a, b, c, d));
 }
