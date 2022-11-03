@@ -25,12 +25,17 @@ function mode(a, b, c, d, e) {
             modes.push(j); // Isolates all numbers that have the same max frequency and pushes them into a seperate array
         }
     }
-    return modes;
+
+    if (max == 1) {
+        return "No Mode";
+    } else {
+        return modes;
+    }
 }
 
-function median(a, b, c, d) {
+function median(a, b, c, d, e) {
     let array = [];
-    array.push(a, b, c, d);
+    array.push(a, b, c, d, e);
     let sorted = array.sort(function(a ,b) {
         return a-b
     }) // Returns the sorted array
@@ -71,5 +76,6 @@ document.getElementById("medianButton").onclick = function() {
     var b = parseFloat(document.getElementById("userInput2").value);
     var c = parseFloat(document.getElementById("userInput3").value);
     var d = parseFloat(document.getElementById("userInput4").value);
-    alert(median(a, b, c, d));
+    var e = parseFloat(document.getElementById("userInput5").value);
+    alert(median(a, b, c, d, e));
 }
