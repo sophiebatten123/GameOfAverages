@@ -5,17 +5,51 @@
     text-align: center;
 }
 
+.right {
+    text-align: right;
+    margin-bottom: 0px;
+}
+
 #pop-up {
     display: none;
     position: absolute;
-    height: 50px;
     top: 50%;
     left: 80%;
     transform: translate(-50%, -50%);
     background-color: white;
+    border: yellow solid 2px;
     border-radius: 5px;
     height: auto;
     text-align: center;
+}
+
+#alternative-pop-up {
+    display: none;
+    position: absolute;
+    height: auto;
+    top: 50%;
+    left: 12%;
+    background-color: white;
+    border: red solid 2px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#no-mode {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: yellow solid 2px;
+    border-radius: 5px;
+    height: auto;
+    text-align: center;
+}
+
+#exit:hover {
+    cursor: pointer;
 }
 
 /*............................................Music Banner*/

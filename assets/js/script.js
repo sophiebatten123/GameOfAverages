@@ -3,9 +3,10 @@ function mean(a, b, c, d, e) {
     array.push(a, b, c, d, e);
     var mean = (a + b + c + d + e)/array.length;
     if (isNaN(mean)) {
-        alert("Please provide all of the numbers");
+        document.getElementById('alternative-pop-up').style.display = "block";
     } else {
         document.getElementById('pop-up').style.display = "block";
+        document.getElementById('no-mode').style.display = "none";
         document.getElementById('average').innerHTML = "mean";
         document.getElementById('answer').innerHTML = mean;
     }
@@ -35,11 +36,13 @@ function mode(a, b, c, d, e) {
     }
 
     if (isNaN(a || b || c || d || e)) {
-        alert('Please provide all of the numbers');
+        document.getElementById('alternative-pop-up').style.display = "block";
     } else if (max == 1) {
-        alert("There is no mode")
+        document.getElementById('no-mode').style.display = "block";
+        document.getElementById('pop-up').style.display = "none";
     } else {
         document.getElementById('pop-up').style.display = "block";
+        document.getElementById('no-mode').style.display = "none";
         document.getElementById('average').innerHTML = "mode";
         document.getElementById('answer').innerHTML = modes;
     }
@@ -58,9 +61,10 @@ function median(a, b, c, d, e) {
         var lower = upper - 1;
         var median = (sorted[lower] + sorted[upper])/2;
         if (isNaN(median)) {
-            alert('Please provide all of the numbers');
+            document.getElementById('alternative-pop-up').style.display = "block";
         } else {
             document.getElementById('pop-up').style.display = "block";
+            document.getElementById('no-mode').style.display = "none";
             document.getElementById('average').innerHTML = "median";
             document.getElementById('answer').innerHTML = median;
         }
@@ -69,9 +73,10 @@ function median(a, b, c, d, e) {
         var lower = Math.floor(middle);
         var median = sorted[lower]
         if (isNaN(median)) {
-            alert('Please provide all of the numbers');
+            document.getElementById('alternative-pop-up').style.display = "block";
         } else {
             document.getElementById('pop-up').style.display = "block";
+            document.getElementById('no-mode').style.display = "none";
             document.getElementById('average').innerHTML = "median";
             document.getElementById('answer').innerHTML = median;
         }
@@ -104,4 +109,8 @@ document.getElementById("medianButton").onclick = function() {
     var d = parseFloat(document.getElementById("userInput4").value);
     var e = parseFloat(document.getElementById("userInput5").value);
     median(a, b, c, d, e);
+}
+
+document.getElementById('exit').onclick = function() {
+    document.getElementById('alternative-pop-up').style.display = "none"
 }
