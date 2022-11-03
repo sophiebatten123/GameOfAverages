@@ -2,9 +2,19 @@
 .background {
     background-color: #081354;
     color: white;
+    text-align: center;
 }
 
-#header {
+#pop-up {
+    display: none;
+    position: absolute;
+    height: 50px;
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 5px;
+    height: auto;
     text-align: center;
 }
 
@@ -25,4 +35,8 @@
     color: red;
     background-color: white;
     border: none;
+}
+
+.averagesbutton {
+    background-color: yellow;
 }
