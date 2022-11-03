@@ -1,3 +1,21 @@
+var counter = 5;
+
+document.getElementById('addNumber').onclick = function() {
+    counter++;
+    console.log(counter);
+    var add = document.createElement("INPUT");
+    add.setAttribute("type", "text");
+    add.setAttribute("id", counter);
+    add.setAttribute("class", "input");
+    document.getElementById('numbers').appendChild(add);
+}
+
+document.getElementById('removeNumber').onclick = function() {
+    document.getElementById(counter).remove();
+    counter--;
+    console.log(counter);
+}
+
 function mean(a, b, c, d, e) {
     let array = []; 
     array.push(a, b, c, d, e);
@@ -85,29 +103,29 @@ function median(a, b, c, d, e) {
 }
 
 document.getElementById("meanButton").onclick = function() {
-    var a = parseFloat(document.getElementById("userInput1").value);
-    var b = parseFloat(document.getElementById("userInput2").value);
-    var c = parseFloat(document.getElementById("userInput3").value);
-    var d = parseFloat(document.getElementById("userInput4").value);
-    var e = parseFloat(document.getElementById("userInput5").value);
+    var a = parseFloat(document.getElementById("1").value);
+    var b = parseFloat(document.getElementById("2").value);
+    var c = parseFloat(document.getElementById("3").value);
+    var d = parseFloat(document.getElementById("4").value);
+    var e = parseFloat(document.getElementById("5").value);
     mean(a, b, c, d, e);
 }
 
 document.getElementById("modeButton").onclick = function() {
-    var a = parseFloat(document.getElementById("userInput1").value);
-    var b = parseFloat(document.getElementById("userInput2").value);
-    var c = parseFloat(document.getElementById("userInput3").value);
-    var d = parseFloat(document.getElementById("userInput4").value);
-    var e = parseFloat(document.getElementById("userInput5").value);
+    var a = parseFloat(document.getElementById("1").value);
+    var b = parseFloat(document.getElementById("2").value);
+    var c = parseFloat(document.getElementById("3").value);
+    var d = parseFloat(document.getElementById("4").value);
+    var e = parseFloat(document.getElementById("5").value);
     mode(a, b, c, d, e);
 }
 
 document.getElementById("medianButton").onclick = function() {
-    var a = parseFloat(document.getElementById("userInput1").value);
-    var b = parseFloat(document.getElementById("userInput2").value);
-    var c = parseFloat(document.getElementById("userInput3").value);
-    var d = parseFloat(document.getElementById("userInput4").value);
-    var e = parseFloat(document.getElementById("userInput5").value);
+    var a = parseFloat(document.getElementById("1").value);
+    var b = parseFloat(document.getElementById("2").value);
+    var c = parseFloat(document.getElementById("3").value);
+    var d = parseFloat(document.getElementById("4").value);
+    var e = parseFloat(document.getElementById("5").value);
     median(a, b, c, d, e);
 }
 

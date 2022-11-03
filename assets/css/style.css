@@ -5,6 +5,13 @@
     text-align: center;
 }
 
+.input {
+    display: block;
+    margin: auto;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
 .right {
     text-align: right;
     margin-bottom: 0px;
