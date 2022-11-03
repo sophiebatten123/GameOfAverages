@@ -1,7 +1,13 @@
 function mean(a, b, c, d, e) {
     let array = []; 
     array.push(a, b, c, d, e);
-    return ((a + b + c +d + e)/array.length);
+    var mean = (a + b + c + d + e)/array.length;
+    if (isNaN(mean)) {
+        alert("Please provide all of the numbers");
+    } else {
+        document.getElementById('mean-value').innerHTML = mean;
+    }
+    return;
 }
 
 function mode(a, b, c, d, e) {
@@ -10,7 +16,7 @@ function mode(a, b, c, d, e) {
     let frequency = [];
     let modes = [] // Created to account for multiple mean values within a set of numbers
     var max = 0; // Acts as a counter
-    
+
     for(let i=0; i < array.length; i++) {
         let number = array[i];
         frequency[number] = (frequency[number] || 0) + 1; // Tracks the frequency of the numbers within the array
@@ -26,11 +32,14 @@ function mode(a, b, c, d, e) {
         }
     }
 
-    if (max == 1) {
-        return "No Mode";
+    if (isNaN(a || b || c || d || e)) {
+        alert('Please provide all of the numbers');
+    } else if (max == 1) {
+        document.getElementById('mode-value').innerHTML = 'No Mode Value';
     } else {
-        return modes;
+        document.getElementById('mode-value').innerHTML = modes;
     }
+    return;
 }
 
 function median(a, b, c, d, e) {
@@ -39,18 +48,27 @@ function median(a, b, c, d, e) {
     let sorted = array.sort(function(a ,b) {
         return a-b
     }) // Returns the sorted array
-    console.log(sorted);
     if (array.length % 2 == 0) {
         var middle = (array.length + 1) / 2;
         var upper = Math.floor(middle)
         var lower = upper - 1;
         var median = (sorted[lower] + sorted[upper])/2;
+        if (isNaN(median)) {
+            alert('Please provide all of the numbers');
+        } else {
+            document.getElementById('median-value').innerHTML = median;
+        }
     } else {
         var middle = array.length / 2;
         var lower = Math.floor(middle);
         var median = sorted[lower]
+        if (isNaN(median)) {
+            alert('Please provide all of the numbers');
+        } else {
+            document.getElementById('median-value').innerHTML = median;
+        }
     }
-    return median;
+    return;
 }
 
 document.getElementById("meanButton").onclick = function() {
@@ -59,7 +77,7 @@ document.getElementById("meanButton").onclick = function() {
     var c = parseFloat(document.getElementById("userInput3").value);
     var d = parseFloat(document.getElementById("userInput4").value);
     var e = parseFloat(document.getElementById("userInput5").value);
-    alert(mean(a, b, c, d, e));
+    mean(a, b, c, d, e);
 }
 
 document.getElementById("modeButton").onclick = function() {
@@ -68,7 +86,7 @@ document.getElementById("modeButton").onclick = function() {
     var c = parseFloat(document.getElementById("userInput3").value);
     var d = parseFloat(document.getElementById("userInput4").value);
     var e = parseFloat(document.getElementById("userInput5").value);
-    alert(mode(a, b, c, d, e));
+    mode(a, b, c, d, e);
 }
 
 document.getElementById("medianButton").onclick = function() {
@@ -77,5 +95,5 @@ document.getElementById("medianButton").onclick = function() {
     var c = parseFloat(document.getElementById("userInput3").value);
     var d = parseFloat(document.getElementById("userInput4").value);
     var e = parseFloat(document.getElementById("userInput5").value);
-    alert(median(a, b, c, d, e));
+    median(a, b, c, d, e);
 }

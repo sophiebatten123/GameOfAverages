@@ -17,7 +17,7 @@
     <title>Game of Averages</title>
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid background" id="header">
         <div class="row">
             <div class="col-12">
                 <h1>Game of Averages</h1>
@@ -26,20 +26,44 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12">
+            <div class="col-2 music mt-2">
+                <i class="fa-solid fa-music"></i>
+            </div>
+            <div class="col-8 music mt-2">
+                <p>Hey diddle diddle the medians the middle, you add and divide for the mean, the mode is the one that you see the most and the range is the difference between</p>
+            </div>
+            <div class="col-2 music mt-2">
+                <i class="fa-solid fa-music"></i>
+            </div>
+        </div>
+        <div class="row background pt-2 pb-2">
+            <div class="col-6">
+                <h5 class="pb-2">To begin please add your numbers below:</h5>
                 <p> Number 1: <input type="text" id="userInput1"></input></p>
                 <p> Number 2: <input type="text" id="userInput2"></input></p>
                 <p> Number 3: <input type="text" id="userInput3"></input></p>
                 <p> Number 4: <input type="text" id="userInput4"></input></p>
                 <p> Number 5: <input type="text" id="userInput5"></input></p>
                 <button id="addNumber" aria-label="Click here to add an additional number">
-                    <i class="fa-solid fa-plus mr-2"></i> Add an Additional Number
+                    <i class="fa-solid fa-plus mr-2"></i> Add a Number
+                </button>
+                <button id="removeNumber" aria-label="Click here to remove a number">
+                    <i class="fa-solid fa-minus mr-2"></i> Remove a Number
                 </button>
             </div>
-            <div class="col-12 mt-4">
+            <div class="col-6">
                 <button id="meanButton" type="button" aria-label="Click here to calculate the mean">Mean</button>
                 <button id="modeButton" type="button" aria-label="Click here to calculate the mode">Mode</button>
                 <button id="medianButton" type="button" aria-label="Click here to calculate the median">Median</button>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 mt-3">
+                <p>Mean: <span id="mean-value"></span></p>
+                <p>Mode: <span id="mode-value"></span></p>
+                <p>Median: <span id="median-value"></span></p>
             </div>
         </div>
     </div>

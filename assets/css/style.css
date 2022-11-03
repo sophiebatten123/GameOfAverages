@@ -1,6 +1,28 @@
+/*...........................................Main Styling*/
+.background {
+    background-color: #081354;
+    color: white;
+}
+
+#header {
+    text-align: center;
+}
+
+/*............................................Music Banner*/
+
+.music {
+    text-align: center;
+}
+
 /*............................................Buttons*/
 #addNumber {
     color: green;
+    background-color: white;
+    border: none;
+}
+
+#removeNumber {
+    color: red;
     background-color: white;
     border: none;
 }
