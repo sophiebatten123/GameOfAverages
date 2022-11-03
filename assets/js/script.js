@@ -16,10 +16,12 @@ document.getElementById('removeNumber').onclick = function() {
     console.log(counter);
 }
 
-function mean(a, b, c, d, e) {
-    let array = []; 
-    array.push(a, b, c, d, e);
-    var mean = (a + b + c + d + e)/array.length;
+function mean(array) {
+    var total = 0;
+    for (i=0; i < array.length; i++) {
+        total += array[i];
+    }
+    var mean = total/array.length;
     if (isNaN(mean)) {
         document.getElementById('alternative-pop-up').style.display = "block";
     } else {
@@ -31,9 +33,7 @@ function mean(a, b, c, d, e) {
     return;
 }
 
-function mode(a, b, c, d, e) {
-    let array = [];
-    array.push(a, b, c, d, e); // Creates an array of numbers to allow for iteration to take place
+function mode(array) {
     let frequency = [];
     let modes = [] // Created to account for multiple mean values within a set of numbers
     var max = 0; // Acts as a counter
@@ -53,7 +53,7 @@ function mode(a, b, c, d, e) {
         }
     }
 
-    if (isNaN(a || b || c || d || e)) {
+    if (max == 2) {
         document.getElementById('alternative-pop-up').style.display = "block";
     } else if (max == 1) {
         document.getElementById('no-mode').style.display = "block";
@@ -67,9 +67,7 @@ function mode(a, b, c, d, e) {
     return;
 }
 
-function median(a, b, c, d, e) {
-    let array = [];
-    array.push(a, b, c, d, e);
+function median(array) {
     let sorted = array.sort(function(a ,b) {
         return a-b
     }) // Returns the sorted array
@@ -103,30 +101,33 @@ function median(a, b, c, d, e) {
 }
 
 document.getElementById("meanButton").onclick = function() {
-    var a = parseFloat(document.getElementById("1").value);
-    var b = parseFloat(document.getElementById("2").value);
-    var c = parseFloat(document.getElementById("3").value);
-    var d = parseFloat(document.getElementById("4").value);
-    var e = parseFloat(document.getElementById("5").value);
-    mean(a, b, c, d, e);
+    var inputs = document.getElementsByClassName('input');
+    let array = [];
+    for (i=0; i < inputs.length; i++){
+        let number = parseFloat(inputs[i].value);
+        array.push(number);
+    }
+    mean(array);
 }
 
 document.getElementById("modeButton").onclick = function() {
-    var a = parseFloat(document.getElementById("1").value);
-    var b = parseFloat(document.getElementById("2").value);
-    var c = parseFloat(document.getElementById("3").value);
-    var d = parseFloat(document.getElementById("4").value);
-    var e = parseFloat(document.getElementById("5").value);
-    mode(a, b, c, d, e);
+    var inputs = document.getElementsByClassName('input');
+    let array = [];
+    for (i=0; i < inputs.length; i++){
+        let number = parseFloat(inputs[i].value);
+        array.push(number);
+    }
+    mode(array);
 }
 
 document.getElementById("medianButton").onclick = function() {
-    var a = parseFloat(document.getElementById("1").value);
-    var b = parseFloat(document.getElementById("2").value);
-    var c = parseFloat(document.getElementById("3").value);
-    var d = parseFloat(document.getElementById("4").value);
-    var e = parseFloat(document.getElementById("5").value);
-    median(a, b, c, d, e);
+    var inputs = document.getElementsByClassName('input');
+    let array = [];
+    for (i=0; i < inputs.length; i++){
+        let number = parseFloat(inputs[i].value);
+        array.push(number);
+    }
+    median(array);
 }
 
 document.getElementById('exit').onclick = function() {
