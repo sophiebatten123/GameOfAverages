@@ -17,46 +17,40 @@
     <title>Game of Averages</title>
 </head>
 <body>
-    <div class="container-fluid background">
-        <div class="row">
+    <div class="container-fluid">
+        <div class="row mt-4 yellow-background pt-1">
             <div class="col-12">
-                <h1>Game of Averages</h1>
+                <img id="image" src="assets/images/mean.png" alt="An image for the mean average" width="50">
+                <h1 class="center">Game of Averages</h1>
             </div>
         </div>
     </div>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-2 music mt-2">
-                <i class="fa-solid fa-music"></i>
+        <div class="row pb-2">
+            <div class="col-12 background">
+                <span id="refresh">Reset <i class="fa-solid fa-arrows-rotate"></i></span>
             </div>
-            <div class="col-8 music mt-2">
-                <p>Hey diddle diddle the medians the middle, you add and divide for the mean, the mode is the one that you see the most and the range is the difference between</p>
-            </div>
-            <div class="col-2 music mt-2">
-                <i class="fa-solid fa-music"></i>
-            </div>
-        </div>
-        <div class="row pt-2 pb-2">
             <div class="col-12 background p-4" id="numbers">
-                <h5 class="pb-2">To begin please add your numbers below:</h5>
+                <h5 class="pb-2">To begin please enter your numbers below:</h5>
                 <input type="text" class="input" id="1"></input>
                 <input type="text" class="input" id="2"></input>
                 <input type="text" class="input" id="3"></input>
                 <input type="text" class="input" id="4"></input>
                 <input type="text" class="input" id="5"></input>
             </div>
-            <div class="col-12 background">
+            <div class="col-12 background pb-4">
                 <button id="addNumber" aria-label="Click here to add an additional number">
-                    <i class="fa-solid fa-plus mr-2"></i> Add a Number
+                    <i class="fa-solid fa-plus mr-2"></i> Add another number
                 </button>
                 <button id="removeNumber" aria-label="Click here to remove a number">
-                    <i class="fa-solid fa-minus mr-2"></i> Remove a Number
+                    <i class="fa-solid fa-minus mr-2"></i> Remove the last number
                 </button>
-                <div class="row pt-4">
+                <p class="pt-2" id="remember"><i>If you add or delete a number you must update the average by clicking the buttons below</i></p>
+                <div class="row">
                     <div class="col-12">
-                        <h5>Next select which average you would like to calculate:</h5>
+                        <h5>Next select the average you wish to calculate:</h5>
                     </div>
-                    <div class="col-12">
+                    <div class="col-12 pt-2">
                         <button class="averagesbutton p-2 mr-4" id="meanButton" type="button" aria-label="Click here to calculate the mean">Mean</button>
                         <button class="averagesbutton p-2 mr-4" id="modeButton" type="button" aria-label="Click here to calculate the mode">Mode</button>
                         <button  class="averagesbutton p-2" id="medianButton" type="button" aria-label="Click here to calculate the median">Median</button>

@@ -2,7 +2,6 @@ var counter = 5;
 
 document.getElementById('addNumber').onclick = function() {
     counter++;
-    console.log(counter);
     var add = document.createElement("INPUT");
     add.setAttribute("type", "text");
     add.setAttribute("id", counter);
@@ -13,7 +12,16 @@ document.getElementById('addNumber').onclick = function() {
 document.getElementById('removeNumber').onclick = function() {
     document.getElementById(counter).remove();
     counter--;
-    console.log(counter);
+}
+
+document.getElementById('refresh').onclick = function() {
+    var inputs = document.getElementsByClassName('input');
+    for (i=0; i < inputs.length; i++){
+        inputs[i].value = "";
+    }
+    document.getElementById('pop-up').style.display = "none";
+    document.getElementById('no-mode').style.display = "none";
+    document.getElementById('alternative-pop-up').style.display = "none";
 }
 
 function mean(array) {
@@ -53,7 +61,7 @@ function mode(array) {
         }
     }
 
-    if (max == 2) {
+    if (modes == "") {
         document.getElementById('alternative-pop-up').style.display = "block";
     } else if (max == 1) {
         document.getElementById('no-mode').style.display = "block";
