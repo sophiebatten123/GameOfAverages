@@ -159,3 +159,11 @@ document.getElementById("medianButton").onclick = function() {
 document.getElementById('exit').onclick = function() {
     document.getElementById('alternative-pop-up').style.display = "none"
 }
+
+document.getElementById('exit-notification').onclick = function() {
+    document.getElementById('pop-up').style.display = "none"
+}
+
+document.getElementById('exit-mode').onclick = function() {
+    document.getElementById('no-mode').style.display = "none"
+}

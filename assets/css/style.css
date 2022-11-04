@@ -33,11 +33,11 @@
 
 #refresh {
     float: right;
+    text-align: right;
 }
 
 .right {
-    text-align: right;
-    margin-bottom: 0px;
+    float: right;
 }
 
 #remember {
@@ -54,7 +54,6 @@
     border: yellow solid 2px;
     border-radius: 5px;
     height: auto;
-    text-align: center;
 }
 
 #alternative-pop-up {
@@ -67,7 +66,6 @@
     border: red solid 2px;
     border-radius: 5px;
     height: auto;
-    text-align: center;
 }
 
 #no-mode {
@@ -80,10 +78,17 @@
     border: yellow solid 2px;
     border-radius: 5px;
     height: auto;
-    text-align: center;
 }
 
 #exit:hover {
+    cursor: pointer;
+}
+
+#exit-notification:hover {
+    cursor: pointer;
+}
+
+#exit-mode:hover {
     cursor: pointer;
 }
 
@@ -103,4 +108,30 @@
 .averagesbutton {
     background-color: yellow;
     color: #081354;
+}
+
+/*..........................................................Media Queries*/
+
+@media(max-width:800px) {
+    #pop-up {
+        left: 50%;
+    }
+    #alternative-pop-up {
+        left: 50%;
+    }
+    #no-mode {
+        left: 50%;
+    }
+}
+
+@media(max-width:500px) {
+    #image {
+        display: none;
+    }
+}
+
+@media(max-width:450px) {
+    #removeNumber {
+        margin-top: 5px;
+    }
 }
