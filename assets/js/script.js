@@ -3,9 +3,10 @@ var counter = 5;
 document.getElementById('addNumber').onclick = function() {
     counter++;
     var add = document.createElement("INPUT");
-    add.setAttribute("type", "text");
+    add.setAttribute("type", "number");
     add.setAttribute("id", counter);
     add.setAttribute("class", "input");
+    add.setAttribute("placeholder", `Number ${counter}`);
     document.getElementById('numbers').appendChild(add);
 }
 
@@ -113,6 +114,7 @@ document.getElementById("meanButton").onclick = function() {
     let array = [];
     for (i=0; i < inputs.length; i++){
         let number = parseFloat(inputs[i].value);
+        console.log(number);
         array.push(number);
     }
     mean(array);
