@@ -134,8 +134,12 @@ document.getElementById("modeButton").onclick = function() {
     for (i=0; i < inputs.length; i++){
         let number = parseFloat(inputs[i].value);
         array.push(number);
+        if (isNaN(number)) {
+            document.getElementById('alternative-pop-up').style.display = "block";
+        } else {
+            mode(array);
+        }
     }
-    mode(array);
 }
 
 document.getElementById("medianButton").onclick = function() {
@@ -144,8 +148,12 @@ document.getElementById("medianButton").onclick = function() {
     for (i=0; i < inputs.length; i++){
         let number = parseFloat(inputs[i].value);
         array.push(number);
+        if (isNaN(number)) {
+            document.getElementById('alternative-pop-up').style.display = "block";
+        } else {
+            median(array);
+        }
     }
-    median(array);
 }
 
 document.getElementById('exit').onclick = function() {

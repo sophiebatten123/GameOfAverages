@@ -60,12 +60,13 @@
 #alternative-pop-up {
     display: none;
     position: absolute;
-    height: auto;
     top: 50%;
-    left: 12%;
+    left: 80%;
+    transform: translate(-50%, -50%);
     background-color: white;
     border: red solid 2px;
     border-radius: 5px;
+    height: auto;
     text-align: center;
 }
 
