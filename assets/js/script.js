@@ -75,6 +75,7 @@ function mode(array) {
 
     if (max == 1) {
         document.getElementById('no-mode').style.display = "block";
+        document.getElementById('pop-up').style.display = "none";
     } else {
         document.getElementById('pop-up').style.display = "block";
         document.getElementById('average').innerHTML = "mode";
