@@ -43,37 +43,44 @@ function mean(array) {
 }
 
 function mode(array) {
-    let frequency = [];
-    let modes = [] // Created to account for multiple mean values within a set of numbers
-    var max = 0; // Acts as a counter
+    const obj = {};
+    let max = 0;
+    let maxNumber = -Infinity;
+    let modes = []
 
-    for(let i=0; i < array.length; i++) {
-        let number = array[i];
-        frequency[number] = (frequency[number] || 0) + 1; // Tracks the frequency of the numbers within the array
+    array.forEach(element => {
+        if (!obj[element]) {
+            obj[element] = 1;
+        } else {
+            obj[element] += 1;
+        }
+    });
 
-        if (frequency[number] > max) {
-            max = frequency[number]; // Updates the max value is required
+    // {'-2': 2, '-3': 2, '4': 1}
+
+    for (let key in obj) {
+        const value = obj[key]; //-2
+        if (value >= max) {
+            max = value;
         }
     }
 
-    for (let j=0; j < frequency.length; j++) {
-        if (frequency[j] == max) {
-            modes.push(j); // Isolates all numbers that have the same max frequency and pushes them into a seperate array
+    for (let key in obj) {
+        const value = obj[key];
+        if (value >= max) {
+            maxNumber = key;
+            modes.push(maxNumber);
         }
     }
 
-    if (modes == "") {
-        document.getElementById('alternative-pop-up').style.display = "block";
-    } else if (max == 1) {
+    if (max == 1) {
         document.getElementById('no-mode').style.display = "block";
-        document.getElementById('pop-up').style.display = "none";
     } else {
         document.getElementById('pop-up').style.display = "block";
-        document.getElementById('no-mode').style.display = "none";
         document.getElementById('average').innerHTML = "mode";
+        document.getElementById('no-mode').style.display = "none";
         document.getElementById('answer').innerHTML = modes;
     }
-    return;
 }
 
 function median(array) {
